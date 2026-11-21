@@ -107,6 +107,7 @@ export default function PYQPage() {
               onChange={(e) =>
                 setPyqWeights({ ...pyqWeights, frequency: parseFloat(e.target.value) })
               }
+              aria-label="Frequency Weight Slider"
               className="w-full accent-indigo-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
             />
           </div>
@@ -128,6 +129,7 @@ export default function PYQPage() {
               onChange={(e) =>
                 setPyqWeights({ ...pyqWeights, marks: parseFloat(e.target.value) })
               }
+              aria-label="Marks Weight Slider"
               className="w-full accent-indigo-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
             />
           </div>
@@ -149,6 +151,7 @@ export default function PYQPage() {
               onChange={(e) =>
                 setPyqWeights({ ...pyqWeights, recency: parseFloat(e.target.value) })
               }
+              aria-label="Recency Weight Slider"
               className="w-full accent-indigo-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
             />
           </div>
@@ -170,6 +173,7 @@ export default function PYQPage() {
               onChange={(e) =>
                 setPyqWeights({ ...pyqWeights, gap: parseFloat(e.target.value) })
               }
+              aria-label="Gap Signal Weight Slider"
               className="w-full accent-indigo-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
             />
           </div>
@@ -320,6 +324,7 @@ export default function PYQPage() {
             <input
               type="file"
               accept=".pdf"
+              aria-label="Upload AKTU Examination Paper PDF"
               className="hidden"
               onChange={(e) => {
                 const file = e.target.files?.[0];

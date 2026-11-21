@@ -47,6 +47,12 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <I18nProvider>
             <StoreProvider>
+              <a
+                href="#main-content"
+                className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-xl focus:shadow-lg focus:outline-none"
+              >
+                Skip to main content
+              </a>
               <div className="flex w-full min-h-screen relative z-10">
                 {/* Desktop Floating Glass Sidebar */}
                 <Sidebar />
@@ -54,7 +60,7 @@ export default function RootLayout({
                 {/* Main App Content Area */}
                 <div className="flex-1 flex flex-col min-w-0 pb-16 lg:pb-0">
                   <TopNav />
-                  <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6">
+                  <main id="main-content" className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6">
                     {children}
                   </main>
                 </div>

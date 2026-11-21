@@ -63,6 +63,7 @@ export function MonteCarloChart() {
           step="0.1"
           value={targetSgpa}
           onChange={(e) => setTargetSgpa(parseFloat(e.target.value))}
+          aria-label="Target SGPA Goal Slider"
           className="w-full accent-indigo-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
         />
         <div className="flex justify-between text-[10px] text-slate-400 font-mono">

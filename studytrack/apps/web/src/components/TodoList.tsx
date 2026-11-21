@@ -114,6 +114,7 @@ export function TodoList() {
           <input
             type="text"
             placeholder="What do you need to study or practice?"
+            aria-label="New study task title"
             value={newTitle}
             onChange={(e) => setNewTitle(e.target.value)}
             className="w-full px-3 py-2 text-xs rounded-lg bg-black/40 border border-white/10 text-white outline-none focus:border-indigo-500"

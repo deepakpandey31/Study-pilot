@@ -35,7 +35,7 @@ jobs:
       - name: ESLint Code Quality Check
         run: pnpm lint
 
-      - name: Run Test Suite (Vitest + Prompt Adherence)
+      - name: Run Test Suite (Vitest + Web Tests + Prompt Adherence)
         run: pnpm test
 
       - name: Production Build (Next.js)

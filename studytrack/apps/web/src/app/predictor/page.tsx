@@ -185,6 +185,7 @@ export default function PredictorPage() {
                     onChange={(e) =>
                       updateInternalMarks(sub.subjectId, parseInt(e.target.value))
                     }
+                    aria-label={`Internal Marks for ${sub.subjectName}`}
                     className="w-full accent-indigo-600 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer"
                   />
                 </div>

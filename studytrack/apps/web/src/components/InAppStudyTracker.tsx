@@ -321,6 +321,7 @@ export function InAppStudyTracker() {
                 <input
                   type="text"
                   placeholder="Paste any YouTube lecture link (e.g., https://www.youtube.com/watch?v=...)"
+                  aria-label="Paste YouTube lecture URL"
                   value={youtubeInputUrl}
                   onChange={(e) => setYoutubeInputUrl(e.target.value)}
                   className="flex-1 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white outline-none focus:border-indigo-500"

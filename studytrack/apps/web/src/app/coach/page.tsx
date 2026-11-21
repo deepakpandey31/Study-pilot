@@ -228,6 +228,7 @@ export default function CoachPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask anything about AKTU syllabus, BST, 3-day plans, or exam patterns..."
+          aria-label="Ask study coach a question about AKTU syllabus or exam patterns"
           className="flex-1 px-5 py-3.5 rounded-3xl glass-panel border border-white/15 text-xs text-white focus:outline-none focus:border-indigo-400 shadow-inner"
         />
         <button

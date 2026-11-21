@@ -125,6 +125,7 @@ export default function PlanPage() {
             type="date"
             value={examDate}
             onChange={(e) => setExamDate(e.target.value)}
+            aria-label="Exam Start Date"
             className="w-full px-3.5 py-2.5 text-xs font-semibold rounded-2xl bg-white/5 border border-white/15 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner"
           />
         </div>
@@ -141,6 +142,7 @@ export default function PlanPage() {
               step="0.5"
               value={dailyHours}
               onChange={(e) => setDailyHours(parseFloat(e.target.value))}
+              aria-label="Daily Study Capacity in Hours"
               className="w-full accent-indigo-500 h-2 bg-white/10 rounded-lg cursor-pointer"
             />
             <span className="text-xs font-bold font-mono text-indigo-400 shrink-0">
@@ -237,6 +239,7 @@ export default function PlanPage() {
                           type="checkbox"
                           checked={isDone}
                           readOnly
+                          aria-label={`Mark ${t.topicName} as completed`}
                           className="w-4 h-4 rounded text-indigo-600 cursor-pointer"
                         />
                         <span

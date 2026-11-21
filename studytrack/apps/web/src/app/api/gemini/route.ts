@@ -44,6 +44,17 @@ const FALLBACK_KNOWLEDGE: Record<string, { answer: string; citations: any[] }> =
   },
 };
 
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+  });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const ip = req.headers.get('x-forwarded-for') || '127.0.0.1';
@@ -67,11 +78,14 @@ export async function POST(req: NextRequest) {
     ipRequestMap.set(ip, ipData);
 
     const body = await req.json();
-    const query: string = (body.query || '').trim();
+    const rawQuery: string = (body.query || '').trim();
 
-    if (!query) {
+    if (!rawQuery) {
       return NextResponse.json({ error: 'Query is required' }, { status: 400 });
     }
+
+    // Security sanitization: limit payload length & strip control characters
+    const query = rawQuery.slice(0, 1000).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '');
 
     const cacheKey = query.toLowerCase();
     const cached = responseCache.get(cacheKey);

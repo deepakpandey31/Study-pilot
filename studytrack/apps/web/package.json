@@ -7,6 +7,7 @@
     "build": "next build && node postbuild.js",
     "start": "next start",
     "lint": "next lint",
+    "test": "node --test src/__tests__/web.test.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
